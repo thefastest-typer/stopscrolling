@@ -74,16 +74,7 @@ git clone https://github.com/yourusername/stopscrolling.git
 cd stopscrolling
 ```
 
-3. Open `index.html` in your browser or use a local server
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js
-npx serve
-```
-
-4. Visit `http://localhost:8000` in your browser
+3. Open `index.html` in your browser
 
 ## Dependencies
 
