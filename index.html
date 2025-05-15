@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StopScrolling</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="theme-selector">
+        <button class="theme-button" id="theme-button">
+            <i class="fas fa-cog"></i>
+        </button>
+        <div class="theme-dropdown" id="theme-dropdown">
+            <h4>Color Theme</h4>
+            <div class="theme-options">
+                <button class="theme-option" data-theme="purple-pink">
+                    <span class="color-preview purple-pink"></span>
+                    Purple & Pink
+                </button>
+                <button class="theme-option" data-theme="earth-tones">
+                    <span class="color-preview earth-tones"></span>
+                    Earth Tones
+                </button>
+                <button class="theme-option" data-theme="ocean-breeze">
+                    <span class="color-preview ocean-breeze"></span>
+                    Ocean Breeze
+                </button>
+            </div>
+        </div>
+    </div>
+    <nav>
+        <div class="nav-links">
+            <a href="#" class="nav-link active" data-section="stopscrolling">StopScrolling</a>
+            <a href="#" class="nav-link" data-section="fakesocialmedia">FakeArticles</a>
+            <a href="#" class="nav-link" data-section="fakevideos">FakeVideos</a>
+            <a href="#" class="nav-link" data-section="fakephotos">FakePhotos</a>
+            <a href="#" class="nav-link" data-section="schoolwork">SchoolWork</a>
+            <a href="#" class="nav-link" data-section="readme">README</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="stopscrolling" class="section active">
+            <div class="feature-grid">
+                <div class="feature-box meditation-box" data-feature="meditation">
+                    <i class="fas fa-hourglass-half"></i>
+                    <h3>Meditation Timer</h3>
+                    <p>Set a timer for mindful meditation breaks</p>
+                </div>
+                
+                <div class="feature-box calendar-box" data-feature="calendar">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Calendar</h3>
+                    <p>Schedule and track your goals</p>
+                </div>
+                
+                <div class="feature-box settings-box" data-feature="settings">
+                    <i class="fas fa-cog"></i>
+                    <h3>Popup Settings</h3>
+                    <p>Customize your popup notifications</p>
+                </div>
+                
+                <div class="feature-box goals-box" data-feature="goals">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Goals</h3>
+                    <p>Set and manage your productivity goals</p>
+                </div>
+            </div>
+
+            <div class="feature-content">
+                <div class="meditation-section feature-section" id="meditation-section">
+                    <button class="back-button"><i class="fas fa-arrow-left"></i> Back to Features</button>
+                    <div class="meditation-section">
+                        <h2>Meditation Timer</h2>
+                        <div class="timer-container">
+                            <div class="timer-display">00:00</div>
+                            <div class="timer-controls">
+                                <input type="number" id="minutes" min="1" max="60" value="5" placeholder="Minutes">
+                                <button id="start-timer">Start</button>
+                                <button id="reset-timer">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-section feature-section" id="calendar-section">
+                    <button class="back-button"><i class="fas fa-arrow-left"></i> Back to Features</button>
+                    <div class="calendar-section">
+                        <h2>Calendar</h2>
+                        <div class="calendar-container">
+                            <div class="calendar-header">
+                                <button id="prev-month">&lt;</button>
+                                <h3 id="calendar-month">Month Year</h3>
+                                <button id="next-month">&gt;</button>
+                            </div>
+                            <div class="calendar-weekdays">
+                                <div>Sun</div>
+                                <div>Mon</div>
+                                <div>Tue</div>
+                                <div>Wed</div>
+                                <div>Thu</div>
+                                <div>Fri</div>
+                                <div>Sat</div>
+                            </div>
+                            <div class="calendar-days">
+                                <!-- Days will be added here dynamically -->
+                            </div>
+                            <div class="calendar-events">
+                                <h4>Events for <span id="selected-date">No Date Selected</span></h4>
+                                <div id="events-list">
+                                    <!-- Events will be added here dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="popup-settings-section feature-section" id="settings-section">
+                    <button class="back-button"><i class="fas fa-arrow-left"></i> Back to Features</button>
+                    <div class="popup-settings-section">
+                        <h2>Popup Settings</h2>
+                        <div class="settings-container">
+                            <div class="setting">
+                                <label for="popup-duration">Initial Popup Duration (seconds):</label>
+                                <input type="number" id="popup-duration" min="1" max="60" value="5">
+                            </div>
+                            <div class="setting">
+                                <label for="popup-frequency">Popup Frequency (seconds):</label>
+                                <input type="number" id="popup-frequency" min="5" max="300" value="10">
+                            </div>
+                            <div class="setting website-toggles">
+                                <h3>Enable Popups For:</h3>
+                                <div class="toggle-group">
+                                    <label>
+                                        <input type="checkbox" id="toggle-fakesocialmedia" checked>
+                                        FakeArticles
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="toggle-fakevideos" checked>
+                                        FakeVideos
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="toggle-fakephotos" checked>
+                                        FakePhotos
+                                    </label>
+                                    <label>
+                                        <input type="checkbox" id="toggle-schoolwork" checked>
+                                        SchoolWork
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="goals-section feature-section" id="goals-section">
+                    <button class="back-button"><i class="fas fa-arrow-left"></i> Back to Features</button>
+                    <div class="goals-section">
+                        <h2>Goals</h2>
+                        <div class="goals-container">
+                            <div class="add-goal">
+                                <div class="goal-input-group">
+                                    <input type="text" id="new-goal" placeholder="Enter a new goal">
+                                    <input type="date" id="goal-date">
+                                    <input type="time" id="goal-time">
+                                </div>
+                                <button id="add-goal-btn">Add Goal</button>
+                            </div>
+                            <ul id="goals-list">
+                                <!-- Goals will be added here dynamically -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fakesocialmedia" class="section">
+            <div class="feed">
+                <!-- Articles will be generated here -->
+            </div>
+        </section>
+
+        <section id="fakevideos" class="section">
+            <div class="video-feed">
+                <!-- Videos will be generated here -->
+            </div>
+        </section>
+
+        <section id="fakephotos" class="section">
+            <div class="photo-feed">
+                <!-- Photos will be generated here -->
+            </div>
+        </section>
+
+        <section id="schoolwork" class="section">
+            <div class="schoolwork-container">
+                <h2>Social Media Impact Assignment</h2>
+                <p class="instructions">Read the infographic and answer the questions below:</p>
+                <div class="questions">
+                    <div class="question">
+                        <label for="q1">1. What are the positive and negative impacts of social media on our daily lives? Provide specific examples.</label>
+                        <textarea id="q1" rows="4" placeholder="Consider both personal and societal impacts..."></textarea>
+                    </div>
+                    <div class="question">
+                        <label for="q2">2. How does regular social media use affect your physical and mental well-being? Reflect on your personal experience.</label>
+                        <textarea id="q2" rows="4" placeholder="Think about sleep patterns, stress levels, and overall health..."></textarea>
+                    </div>
+                    <div class="question">
+                        <label for="q3">3. Describe three specific strategies you can implement to improve your attention span and reduce digital distractions.</label>
+                        <textarea id="q3" rows="4" placeholder="Consider practical, actionable steps..."></textarea>
+                    </div>
+                    <div class="question">
+                        <label for="q4">4. How does social media impact different age groups? Analyze its effects across generations and explain why these differences exist.</label>
+                        <textarea id="q4" rows="4" placeholder="Consider children, teenagers, adults, and seniors..."></textarea>
+                    </div>
+                    <div class="question">
+                        <label for="q5">5. Create a detailed action plan for achieving your personal goals. Include specific steps, timelines, and potential obstacles.</label>
+                        <textarea id="q5" rows="4" placeholder="Break down your goals into manageable steps..."></textarea>
+                    </div>
+                </div>
+                <div class="save-container">
+                    <button id="save-answers">Save Answers</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="readme" class="section">
+            <div class="readme-container">
+                <h1>StopScrolling - Digital Wellness Platform</h1>
+                
+                <div class="readme-section">
+                    <h2>About</h2>
+                    <p>StopScrolling is a comprehensive digital wellness platform designed to help users manage their social media usage and improve their productivity. The platform combines mindfulness tools, goal tracking, and simulated social media environments to create awareness about digital habits.</p>
+                </div>
+
+                <div class="readme-section">
+                    <h2>Core Features</h2>
+                    
+                    <h3>1. Meditation Timer</h3>
+                    <ul>
+                        <li>Customizable meditation sessions</li>
+                        <li>Visual countdown timer</li>
+                        <li>Session completion notifications</li>
+                    </ul>
+
+                    <h3>2. Goal Management</h3>
+                    <ul>
+                        <li>Create and track personal goals</li>
+                        <li>Set due dates and times</li>
+                        <li>Mark goals as completed</li>
+                        <li>Calendar integration</li>
+                    </ul>
+
+                    <h3>3. Calendar System</h3>
+                    <ul>
+                        <li>Visual calendar interface</li>
+                        <li>Goal date tracking</li>
+                        <li>Event management</li>
+                        <li>Daily, weekly, and monthly views</li>
+                    </ul>
+
+                    <h3>4. Popup Settings</h3>
+                    <ul>
+                        <li>Customizable reminder intervals</li>
+                        <li>Adjustable popup duration</li>
+                        <li>Website-specific toggle controls</li>
+                        <li>Mindful browsing prompts</li>
+                    </ul>
+                </div>
+
+                <div class="readme-section">
+                    <h2>Theme System</h2>
+                    <p>The platform offers three carefully designed color themes:</p>
+                    <ul>
+                        <li><strong>Purple & Pink:</strong> A vibrant, energetic theme (Default)</li>
+                        <li><strong>Earth Tones:</strong> A calming, natural palette</li>
+                        <li><strong>Ocean Breeze:</strong> A cool, refreshing color scheme</li>
+                    </ul>
+                </div>
+
+                <div class="readme-section">
+                    <h2>Simulated Social Media</h2>
+                    <p>To help users practice mindful browsing, the platform includes:</p>
+                    <ul>
+                        <li>FakeArticles - Simulated news feed</li>
+                        <li>FakeVideos - Video content feed</li>
+                        <li>FakePhotos - Photo sharing feed</li>
+                        <li>Interaction features (likes, comments)</li>
+                    </ul>
+                </div>
+
+                <div class="readme-section">
+                    <h2>Educational Component</h2>
+                    <p>The SchoolWork section provides:</p>
+                    <ul>
+                        <li>Reflective exercises on social media usage</li>
+                        <li>Digital wellness assignments</li>
+                        <li>Progress tracking</li>
+                        <li>Auto-saving responses</li>
+                    </ul>
+                </div>
+
+                <div class="readme-section">
+                    <h2>Technical Features</h2>
+                    <ul>
+                        <li>Responsive design for all devices</li>
+                        <li>Local storage for settings and progress</li>
+                        <li>Smooth animations and transitions</li>
+                        <li>Offline functionality</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Popup overlay -->
+    <div id="popup-overlay" class="popup-overlay">
+        <div class="popup-content">
+            <h2>Wait a moment...</h2>
+            <p id="popup-message"></p>
+            <div class="popup-timer">Time remaining: <span id="popup-countdown">5</span>s</div>
+            <div class="popup-buttons">
+                <button id="continue-button" disabled>Continue Anyway</button>
+                <button id="return-button" class="return-button">Return to StopScrolling</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
